@@ -19,12 +19,14 @@ h= (HIT * Wc)/ xres; % Get h shift out of HIT_Pixel (derived after h)
 M = Ws/Wc; % screen magnification factor --> for transformation from sensor to screen coordinates
 
 % Compute imaged object onto the right/left camera image sensors (xcr and xcl)
-xcr = -f*((t-2*x0)/(2*z0))+h; 
-xcl = f*((t-2*x0)/(2*z0))+h; % seems to be wrong --> value is too big
+xcr = f*((t-2*x0)/(2*z0))+h; 
+xcl = -f*((t-2*x0)/(2*z0))+h; % seems to be wrong --> value is too big
 
 %Compute xi and zi as perceived by the viewer
 xi = (M*e*f*x0)/ (M*f*t - z0*(2*M*h-e));
 zi = (V*e*z0)/(M*f*t-z0*(2*M*h-e));
+
+%Die letzen beiden Schritte scheinen unnötig zu sein (S wird dann mit z0, x0 und W0 berechnet xi und zi sind nicht relevant)
 
 %Compute Width Magnification --> first part for computing Shape Ratio
 Wi3D = (M*e*f*W0)/(M*f*t-z0*(2*M*h-e));
