@@ -38,6 +38,3 @@ MD = (M*V*e*f*t)/(M*f*t-z0*(2*M*h-e)).^2;
 
 %Compute Shape Ratio
 S = (MD/Mi3D);
-
-a = (M*f*t-z0*(2*M*h-e)).^2;
-b=(M*V*e*f*t);
